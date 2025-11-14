@@ -1,0 +1,30 @@
+{
+  "name": "katas_david",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fizzbuzz.test.js",
+  "scripts": {
+  "test": "mocha -r ts-node/register \"**/*.test.ts\""
+
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FedericoFarina01/katas_david.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FedericoFarina01/katas_david/issues"
+  },
+  "homepage": "https://github.com/FedericoFarina01/katas_david#readme",
+  "devDependencies": {
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "chai": "^6.2.1",
+    "mocha": "^11.7.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
