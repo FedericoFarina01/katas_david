@@ -4,9 +4,7 @@
   "description": "",
   "main": "fizzbuzz.test.js",
   "scripts": {
-  "test": "mocha -r ts-node/register \"**/*.test.ts\""
-
-
+    "test": "mocha -r ts-node/register \"**/*.test.ts\""
   },
   "repository": {
     "type": "git",
