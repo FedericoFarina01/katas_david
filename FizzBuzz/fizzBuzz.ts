@@ -1,24 +1,32 @@
-export class FizzBuzz {
-	fizzCount = 0;
-	buzzCount = 0;
+// fizzbuzz.ts
 
-	isFizz(num: number): boolean {
-		return num % 3 === 0;
-	}
+export function createRule(divisor: number, word: string) {
+	return function (n: number): string {
+		return n % divisor === 0 ? word : "";
+	};
+}
 
-	isBuzz(num: number): boolean {
-		return num % 5 === 0;
-	}
+export function createFizzBuzz(rules: Array<(n: number) => string>) {
+	return function (n: number): string {
+		let result = "";
 
-	playFizzBuzz(numero: number): { Fizz: number; Buzz: number } {
-		this.fizzCount = 0;
-		this.buzzCount = 0;
-
-		for (let i = 1; i <= numero; i++) {
-			if (this.isFizz(i)) this.fizzCount++;
-			if (this.isBuzz(i)) this.buzzCount++;
+		for (const rule of rules) {
+			result += rule(n);
 		}
 
-		return { Fizz: this.fizzCount, Buzz: this.buzzCount };
+		return result === "" ? String(n) : result;
+	};
+}
+
+export function playFizzBuzz(
+	fizzBuzzFn: (n: number) => string,
+	max: number,
+): string[] {
+	const output: string[] = [];
+
+	for (let i = 1; i <= max; i++) {
+		output.push(fizzBuzzFn(i));
 	}
+
+	return output;
 }
